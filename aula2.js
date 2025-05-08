@@ -26,6 +26,7 @@ console.log('Linha 2');
 
 // Tipagem Fraca
 
+
 let qualquer = 'Legal';
 console.log(qualquer);
 console.log(typeof qualquer);
@@ -36,7 +37,6 @@ console.log(typeof qualquer);
 
 
 // Strings
-
 
 const escola = 'Aesa-Cesa';
 console.log(escola.charAt(4));
@@ -75,7 +75,7 @@ console.log(valor1 * valor2); // Multiplicação → 50
 console.log(valor1 / valor2); // Divisão → 2 
 
 
-// https://playcode.io/javascript
+// // https://playcode.io/javascript/
 
 
 
