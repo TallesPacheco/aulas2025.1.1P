@@ -45,6 +45,13 @@ function somar(){
     console.log(1 + 2);
 }
 
+function imprimirNome(nomeASerImpresso, novoParametro){
+  console.log(nomeASerImpresso)
+  console.log(nomeASerImpresso)
+  console.log(nomeASerImpresso)
+};
+
 somar();
+imprimirNome("MEU NOME")
 
 // https://playcode.io/javascript/

@@ -1,0 +1,79 @@
+1 - Crie um sistema de verificação de entrada em um evento. Cada pessoa deve ser representada por um objeto com as seguintes propriedades: nome, idade e temIngresso (boolean).
+    Armazene pelo menos 4 objetos dentro de um array.
+    Crie uma função que percorra esse array e imprima:
+    "Entrada liberada para Fulano", se a pessoa tiver ingresso e idade maior ou igual a 18.
+    "Entrada negada para Fulano", caso contrário.
+
+2 -Crie uma função que receba 3 notas como parâmetros. Antes de calcular a média, verifique se todas as notas são válidas (números entre 0 e 10).
+    Se forem válidas, calcule a média e retorne:
+    "Aprovado", se a média for maior ou igual a 7.
+    "Recuperação", se for entre 5 e 6.9.
+    "Reprovado", se for menor que 5.
+    Se alguma nota for inválida, retorne: "Notas inválidas".
+
+3 - Crie um array de objetos onde cada objeto representa um funcionário com os seguintes campos:
+    nome (string)
+    cargo (string)
+    salario (número)
+    Crie uma função que:
+    Imprima o nome e o salário de todos os funcionários cujo salário seja maior que R$ 2.000.
+    Conte quantos funcionários têm cargo de "Gerente".
+
+4 - Crie um array de objetos representando produtos de uma loja. Cada objeto deve ter as propriedades:
+    nome (string)
+    quantidade (número)
+    preco (número)
+    Crie uma função que:
+    Liste todos os produtos com quantidade maior que zero e calcule o valor total de cada um (quantidade × preço).
+    No final, informe o valor total de todos os produtos disponíveis no estoque.
+
+5 - Crie um array de 5 objetos, cada um representando um visitante com:
+    nome
+    idade
+    temConvite (boolean)
+    vip (boolean)
+    Crie uma função que percorra o array e imprima:
+    "Bem-vindo Fulano!" se ele for maior de 16 e (tem convite ou é VIP).
+    "Acesso negado para Fulano" caso contrário.
+
+
+--------------------------------------------------------- Ex --------------------------------------------------------------------------
+
+Crie uma função que receba um array com 4 notas.
+A função deve validar se todas as notas estão entre 0 e 10.
+Se estiverem, deve calcular a média e retornar:
+"Média válida: x.xx – Situação: Aprovado" (se média ≥ 7)
+"Média válida: x.xx – Situação: Recuperação" (entre 5 e 6.9)
+"Média válida: x.xx – Situação: Reprovado" (menor que 5)
+Caso alguma nota seja inválida, deve retornar:
+"Erro: notas inválidas encontradas".
+
+
+function avaliarNotas(notas) {
+  let soma = 0;
+
+  for (let i = 0; i < notas.length; i++) {
+    if (notas[i] < 0 || notas[i] > 10) {
+      return "Erro: notas inválidas encontradas.";
+    }
+    soma += notas[i];
+  }
+
+  let media = soma / notas.length;
+  let situacao = "";
+
+  if (media >= 7) {
+    situacao = "Aprovado";
+  } else if (media >= 5) {
+    situacao = "Recuperação";
+  } else {
+    situacao = "Reprovado";
+  }
+
+   return "Média válida: ".concat(media.toFixed(2), " – Situação: ", situacao);
+}
+
+console.log(avaliarNotas([8, 7, 6, 9])); 
+console.log(avaliarNotas([4, 5, 6, 5])); 
+console.log(avaliarNotas([2, 3, 4, 1])); 
+console.log(avaliarNotas([9, -1, 10, 7])); 
